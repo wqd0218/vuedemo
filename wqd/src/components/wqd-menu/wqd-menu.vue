@@ -34,6 +34,9 @@
 <script>
 export default {
   name: 'wqdMenu',
+  props: {
+    myNumber: Number
+  },
   methods: {
     handleOpen () {
       console.log('open')
@@ -42,8 +45,10 @@ export default {
       console.log('close')
     },
     go () {
-      this.$emit('go')
+      this.$emit('go-back')
     }
+  },
+  mounted () {
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <wqd-menu @go="toHome"></wqd-menu>
+    <wqd-menu @go-back="toHome" @click.native="showText" :my-number="count"></wqd-menu>
     <div class="page">
       <el-button @click="show = !show">test</el-button>
       <div class="group">
@@ -41,7 +41,8 @@ export default {
   name: 'test',
   data () {
     return {
-      show: true
+      show: true,
+      count: 0
     }
   },
   components: {
@@ -49,8 +50,14 @@ export default {
   },
   methods: {
     toHome () {
-      this.$router.push('/home')
+      // this.$router.push('/home')
+      this.$router.back()
+    },
+    showText () {
+      console.log('wqd')
     }
+  },
+  mounted () {
   }
 }
 </script>
